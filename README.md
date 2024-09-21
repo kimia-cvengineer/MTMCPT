@@ -25,7 +25,7 @@ This project introduces an innovative framework designed to improve surveillance
 <img src="images/proposed_pipeline.png" alt="proposed_pipeline" width="600">
 
 ### Step 0: Dataset Preparation
-- **Dataset**: MEVA (Multimedia Event Detection and Activity Dataset)
+- **Dataset**: [MEVA](https://mevadata.org/) (Multimedia Event Detection and Activity Dataset)
   - A challenging large-scale video dataset designed for activity recognition in multi-camera environments.
   - Contains over 9,300 hours of untrimmed videos with:
     - Diverse backgrounds, camera poses, illuminations, and indoor/outdoor scenes.
@@ -49,7 +49,7 @@ This project introduces an innovative framework designed to improve surveillance
 <img src="images/annotaion_results.png" alt="annotaion_results" width="600">
 
 ### Step 1: Single-view Multi-Object Tracking
-- **BoT-SORT: Robust Associations Multi-Pedestrian Tracking**:
+- **[BoT-SORT](https://github.com/NirAharon/BoT-SORT/tree/main): Robust Associations Multi-Pedestrian Tracking**:
   - Fuses motion and appearance features.
   - Uses Kalman filter for motion-based future position estimation.
   - Employs BoT (SBS) appearance-based feature extractor to reduce tracking errors.
@@ -87,7 +87,8 @@ This project introduces an innovative framework designed to improve surveillance
 | Pipeline + pre/post-clustering refinement | 34.8% | 28.8% | 44.3% | 353 |
 
 ### Qualitative Results
-**Single-camera Different Time**
+**Single-camera Different Time Person Tracking**
+
 <img src="images/multi-times-results.png" alt="multi-times-results" width="600">
 
 **Multi-view Person Tracking**
