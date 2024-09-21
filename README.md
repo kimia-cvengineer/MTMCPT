@@ -11,14 +11,9 @@ This project introduces an innovative framework designed to improve surveillance
 <img src="images/box_exchanging_img.png" alt="box_exchanging_img" width="400">
 
 ### Importance of the Problem
-- **Public safety and security**:
-  - *Detect and prevent anomalies and suspicious activities in surveillance systems.*
-- **Traffic monitoring and management**:
-  - *Detect traffic violations, accidents, and congestion.*
-  - *Assist with law enforcement.*
-- **Healthcare and elderly care**:
-  - *Monitor patients' movements.*
-  - *Provide assistance in elderly care facilities.*
+- **Public safety and security**
+- **Traffic monitoring and management**
+- **Healthcare and elderly care**
 
 ### Proposed Tracking Framework
 
@@ -28,19 +23,19 @@ This project introduces an innovative framework designed to improve surveillance
 - **Dataset**: [MEVA](https://mevadata.org/) (Multimedia Event Detection and Activity Dataset)
   - A challenging large-scale video dataset designed for activity recognition in multi-camera environments.
   - Contains over 9,300 hours of untrimmed videos with:
-    - *Diverse backgrounds, camera poses, illuminations, and indoor/outdoor scenes.*
-    - *Videos taken at different times of the day, month, and year, split into 5-minute segments.*
+    - Diverse backgrounds, camera poses, illuminations, and indoor/outdoor scenes.
+    - Videos taken at different times of the day, month, and year, split into 5-minute segments.
   - Involves 158 unique people wearing 598 outfits across 33 camera views.
   
 <img src="images/meva_dataset_samples.png" alt="meva_dataset_samples" width="600">
 
 - **Focus**:
   - We focus on 5 connected cameras:
-    - *14 videos.*
-    - *Each video contains 9,000 frames (~5 minutes long).*
-    - *20 unique people across cameras.*
+    - 14 videos.
+    - Each video contains 9,000 frames (~5 minutes long).
+    - 20 unique people across cameras.
 
-<img src="images/meva_dataset_site_map_focus.png" alt="meva_dataset_site_map_focus" width="600">
+<img src="images/meva_dataset_site_map_focus.png" alt="meva_dataset_site_map_focus" width="400">
 
 - **Annotations**:
   - By default, the dataset doesn’t provide consistent IDs for people.
@@ -92,6 +87,7 @@ This project introduces an innovative framework designed to improve surveillance
 <img src="images/multi-times-results.png" alt="multi-times-results" width="600">
 
 **Multi-view Person Tracking**
+
 <img src="images/multi-camera-results.png" alt="multi-camera-results" width="600">
 
-For the technical details of the project and experiments, please refer to [my presentation slides](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion).
+For the technical details of the project and experiments, please refer to [my presentation slides](files/Kimia_Afshari_MS_Project_Defense_Presentation_Slides.pdf).
