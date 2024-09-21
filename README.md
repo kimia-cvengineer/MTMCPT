@@ -8,7 +8,7 @@ This project introduces an innovative framework designed to improve surveillance
   - Generalize to both overlapping and non-overlapping cameras indoors and outdoors.
   - Address challenges in viewpoint variance and frame quality through refinement techniques.
 
-<img src="images/box_exchanging_img.png" alt="box_exchanging_img" width="600">
+<img src="images/box_exchanging_img.png" alt="box_exchanging_img" width="400">
 
 ### Importance of the Problem
 - **Public safety and security**:
@@ -46,7 +46,7 @@ This project introduces an innovative framework designed to improve surveillance
   - By default, the dataset doesn’t provide consistent IDs for people.
   - We annotated part of the dataset using a custom annotation tool due to the dataset’s large scale.
 
-<img src="images/meva_annotator_example.png" alt="meva_annotator_example" width="600">
+<img src="images/annotaion_results.png" alt="annotaion_results" width="600">
 
 ### Step 1: Single-view Multi-Object Tracking
 - **BoT-SORT: Robust Associations Multi-Pedestrian Tracking**:
@@ -71,7 +71,7 @@ This project introduces an innovative framework designed to improve surveillance
     - Calculate the aggregated distance matrix between each pair of tracklets.
     - Cluster tracklets using the aggregated distance matrix.
 
-<img src="images/tracklet_clustering" alt="tracklet_clustering" width="600">
+<img src="images/tracklet_clustering.png" alt="tracklet_clustering" width="600">
 
 ### Step 4: Intra-camera Clustering Refinement
 - Follows the same approach described in **Tracklet Refinement**.
@@ -80,9 +80,17 @@ This project introduces an innovative framework designed to improve surveillance
 - Follows the same approach described in **Intra-camera Tracklet Association**.
 
 ### Quantitative Results
-# TODO add real table
+| Method  | IDF1 | IDP | IDR | IDS |
+| --- | --- | --- | --- | --- | 
+| Pipeline w/o refinement | 27.3% | 22.2% | 34.7% | 375 | 
+| Pipeline + pre-clustering refinement | 32.2% | 26.9% | 37.9% | 386 |
+| Pipeline + pre/post-clustering refinement | 34.8% | 28.8% | 44.3% | 353 |
 
 ### Qualitative Results
+**Single-camera Different Time**
+<img src="images/multi-times-results.png" alt="multi-times-results" width="600">
+
+**Multi-view Person Tracking**
 <img src="images/multi-camera-results.png" alt="multi-camera-results" width="600">
 
 For the technical details of the project and experiments, please refer to [my presentation slides](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion).
