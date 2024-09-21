@@ -1,5 +1,4 @@
-# MTMCPT
-**Multi-target Multi-camera Person Tracking (M.S. Project)**
+# Multi-target Multi-camera Person Tracking
 
 This project introduces an innovative framework designed to improve surveillance, monitoring, and anomaly detection systems through consistent tracking and re-identification of people across both overlapping and non-overlapping cameras. To continuously track and re-identify individuals, a fusion of people’s motion and appearance features is leveraged. Addressing the difficulties posed by fluctuating lighting conditions, quality of frames, and occlusions, this approach refines and connects the tracking results from individual cameras to produce reliable and continuous tracklets. Lastly, hierarchical clustering organizes single-camera tracklets into distinct groups of unique identities.
 
@@ -7,12 +6,9 @@ This project introduces an innovative framework designed to improve surveillance
 - **Goal**: Consistently track and re-identify people across multi-view cameras.
 - **Scope**:
   - Generalize to both overlapping and non-overlapping cameras indoors and outdoors.
-  - Address challenges in:
-    - Viewpoint variance.
-    - Illumination changes.
-    - Frame quality through refinement techniques.
+  - Address challenges in viewpoint variance and frame quality through refinement techniques.
 
-<img src="img/box_exchanging_img.png" alt="box_exchanging_img" width="600">
+<img src="images/box_exchanging_img.png" alt="box_exchanging_img" width="600">
 
 ### Importance of the Problem
 - **Public safety and security**:
@@ -26,7 +22,7 @@ This project introduces an innovative framework designed to improve surveillance
 
 ### Proposed Tracking Framework
 
-<img src="img/proposed_pipeline.png" alt="proposed_pipeline" width="600">
+<img src="images/proposed_pipeline.png" alt="proposed_pipeline" width="600">
 
 ### Step 0: Dataset Preparation
 - **Dataset**: MEVA (Multimedia Event Detection and Activity Dataset)
@@ -36,7 +32,7 @@ This project introduces an innovative framework designed to improve surveillance
     - Videos taken at different times of the day, month, and year, split into 5-minute segments.
   - Involves 158 unique people wearing 598 outfits across 33 camera views.
   
-<img src="img/meva_dataset_samples.png" alt="meva_dataset_samples" width="600">
+<img src="images/meva_dataset_samples.png" alt="meva_dataset_samples" width="600">
 
 - **Focus**:
   - We focus on 5 connected cameras:
@@ -44,13 +40,13 @@ This project introduces an innovative framework designed to improve surveillance
     - Each video contains 9,000 frames (~5 minutes long).
     - 20 unique people across cameras.
 
-<img src="img/meva_dataset_site_map_focus.png" alt="meva_dataset_site_map_focus" width="600">
+<img src="images/meva_dataset_site_map_focus.png" alt="meva_dataset_site_map_focus" width="600">
 
 - **Annotations**:
   - By default, the dataset doesn’t provide consistent IDs for people.
   - We annotated part of the dataset using a custom annotation tool due to the dataset’s large scale.
 
-<img src="img/meva_annotator_example.png" alt="meva_annotator_example" width="600">
+<img src="images/meva_annotator_example.png" alt="meva_annotator_example" width="600">
 
 ### Step 1: Single-view Multi-Object Tracking
 - **BoT-SORT: Robust Associations Multi-Pedestrian Tracking**:
@@ -66,16 +62,16 @@ This project introduces an innovative framework designed to improve surveillance
   - Applies K-Means clustering to split tracklets.
   - Reduces errors caused by single-camera trackers.
 
-<img src="img/tracklet_refinement_example.png" alt="tracklet_refinement_example" width="600">
+<img src="images/tracklet_refinement.png" alt="tracklet_refinement" width="600">
 
 ### Step 3: Intra-camera Tracklet Association
 - **Approach**: 
-  - Uses agglomerative clustering to group tracklets with the same identity based on their appearance features.
+  - Uses agglomerative clustering to group tracklets with the same identity based on appearance features.
   - **Process**:
     - Calculate the aggregated distance matrix between each pair of tracklets.
     - Cluster tracklets using the aggregated distance matrix.
 
-<img src="img/tracklet_clustering_example.png" alt="tracklet_clustering_example" width="600">
+<img src="images/tracklet_clustering" alt="tracklet_clustering" width="600">
 
 ### Step 4: Intra-camera Clustering Refinement
 - Follows the same approach described in **Tracklet Refinement**.
@@ -84,9 +80,9 @@ This project introduces an innovative framework designed to improve surveillance
 - Follows the same approach described in **Intra-camera Tracklet Association**.
 
 ### Quantitative Results
-<img src="img/Instruct2Dream - Pipeline.png" alt="Instruct2Dream - Pipeline" width="600">
+# TODO add real table
 
 ### Qualitative Results
-<img src="img/Instruct2Dream - Pipeline.png" alt="Instruct2Dream - Pipeline" width="600">
+<img src="images/multi-camera-results.png" alt="multi-camera-results" width="600">
 
 For the technical details of the project and experiments, please refer to [my presentation slides](https://github.com/XavierXiao/Dreambooth-Stable-Diffusion).
